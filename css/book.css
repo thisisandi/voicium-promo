@@ -1,0 +1,269 @@
+body {
+  background-color: white;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* текст с искажением */
+#text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -25vw;
+  height: 100vw;
+  width: 100vw;
+}
+  
+#text canvas {
+  width: 100vw !important;
+}
+
+/* навигация */
+#sliderContainer,
+#buttons {
+  position: relative;
+}
+
+#sliderContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  width: 6vw;
+  height: 2.2vw;
+  border-radius: 2vw;
+  padding: 0.2vw;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+#sliderToggle {
+  position: absolute;
+  right: 0.4vw;
+  width: 1.6vw;
+  height: 1.6vw;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.5s ease, right 0.5s ease; 
+  cursor: pointer !important;
+}
+
+#sliderContainer.small-slider {
+  background-color: rgba(102, 102, 102, 0.4);
+  transform: scale(0.6) translateY(-0.5vw) translateX(-4vw); 
+}
+
+#sliderContainer.small-slider #sliderToggle {
+  right: calc(100% - 4vw); 
+  transform: translateX(-100%);
+}
+
+#buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 7.5vw;
+  transition: opacity 0.5s ease;
+}
+
+#buttons a {
+  margin-right: 1.2vw;
+  text-decoration: none;
+  color: black;
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.2vw;
+  text-wrap: nowrap;
+  background-color: rgba(102, 102, 102, 0.4);
+  padding: 0.5vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border-radius: 0.5vw;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, background-color 0.5s ease;
+}
+
+#buttons a:hover {
+  background-color: black;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#home {
+  background-color: rgba(102, 102, 102, 0.4);
+  width: 2.2vw;
+  height: 2.2vw;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2vw;
+  background-image: url('../img/home.svg');
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.home-icon {
+  width: 1.5vw;
+  height: 1.5vw;
+}
+
+#home:hover {
+  background-color: black;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.header {
+  justify-content: space-between;
+  display: flex;
+  width: 95%;
+  margin: 1vw auto;
+}
+
+.arrow {
+  width: 0.8vw;
+  height: 0.8vw;
+  margin-left: 0.2vw;
+}
+
+.header, #sliderContainer, #home {
+  position: relative;
+  z-index: 10000;
+}
+
+/* страницы книги */
+.page {
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  background-size: cover;
+  background-position: center;
+  z-index: 9;
+  width: 35vw;
+  height: 20vw;
+  aspect-ratio: 1 / 1;  
+  display: none;
+  cursor: pointer;
+  box-shadow: 0vw 3vw 3vw rgba(0, 0, 0, 0.2);
+  width: 35vw;
+  height: 25vw;
+}
+
+.one {
+  background-image: url(../img/one.svg);
+  display: block;
+}
+
+.two {
+  background-image: url(../img/two.svg);
+}
+
+.three {
+  background-image: url(../img/three.svg);
+}
+
+.four {
+  background-image: url(../img/four.svg);
+}
+
+.five {
+  background-image: url(../img/five.svg);
+}
+
+.six {
+  background-image: url(../img/six.svg); 
+}
+
+.seven {
+  background-image: url(../img/seven.svg);
+}
+
+.eight {
+  background-image: url(../img/eight.svg);
+}
+
+.nine {
+  background-image: url(../img/nine.svg);
+}
+
+.ten {
+  background-image: url(../img/ten.svg);
+}
+
+.rotate20 {
+  transform: translate(-50%, -50%) rotate(20deg);
+}
+
+.rotateNeg20 {
+  transform: translate(-50%, -50%) rotate(-20deg);
+}
+
+/* экран с сообщением о необходимости повернуть устройство */
+.rotateScreen {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'IgraSans';
+  font-size: 1.5vw;
+  flex-direction: column;
+}
+
+.phone {
+  height: 20vw;
+  width: 40vw;
+  border: 0.5vw solid black;
+  border-radius: 1.5vw;
+  animation: rotate 1.5s ease-in-out infinite alternate;
+  margin-bottom: 10vw;
+}
+
+.message {
+  color: black;
+  font-size: 4.5vw;
+  margin-top: 3vw;
+}
+
+@keyframes rotate {
+  0% {
+      transform: rotate(0deg)
+  }
+  50% {
+      transform: rotate(-90deg)
+  }
+  100% {
+      transform: rotate(-90deg)
+  }
+}
+
+/* отображение сообщения о необходимости повернуть устройство */
+@media all and (orientation: portrait){
+  .rotateScreen{
+      display: flex;
+}
+  .header {
+      display: none;
+  }
+  
+  .content {
+      display: none;
+      opacity: 0;
+  }
+
+  .b-canvas {
+    display: none;
+    opacity: 0;
+}
+}

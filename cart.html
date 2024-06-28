@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>корзина</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/cart.css">
+  <link rel="icon" type="image/svg+xml" href="./img/logo2.png">
+  <script src="./js/cart.js"></script>
+</head>
+
+<body>
+  <!-- навигация -->
+  <div class="header">
+    <div id="sliderContainer">
+        <div id="sliderToggle">
+    </div>
+    <!-- навигационные кнопки -->
+    <div id="buttons">
+      <a href="./about.html" class="nav-button" id="about">ценности</a>
+      <a href="./space.html" class="nav-button" id="space">пространство</a>
+      <a href="./book.html" class="nav-button" id="book">книга</a>
+      <a href="./shop.html" class="nav-button" id="shop">магазин</a>
+      <a href="./events.html" class="nav-button" id="events">афиша</a>
+      <a href="./record.html" class="nav-button" id="record">запись голоса
+          <img class="arrow" src="./img/arrow.svg">
+      </a>
+    </div>
+    </div>
+    <!-- кнопка "домой" -->
+    <form action="./index.html">
+       <button class="home-icon" id="home"></button>
+    </form>
+  </div>
+  <!-- кнопка "назад" -->
+  <form action="./shop.html"> 
+  <button class="back" id="back">
+    <img src="./img/back.svg" class="back-icon">
+  </button>
+</form>
+  <!-- контент для оформления заказа -->
+  <h1>оформление заказа</h1>
+  <h2>1 // контактные данные</h2>
+  <input type="text" placeholder="имя" required>
+  <input type="tel" placeholder="номер телефона" required>
+  <input type="email" placeholder="электронная почта" required>
+  <input type="comment" placeholder="комментарий к заказу">
+  <h2>2 // способ доставки</h2>
+  <div class="radio-container">
+    <input type="radio" id="self_pickup" name="delivery_method" class="round-radio" checked>
+    <label for="self_pickup">самовывоз</label><br>
+</div>
+<div class="radio-container">
+    <input type="radio" id="delivery" name="delivery_method" class="round-radio">
+    <label for="delivery">доставка</label><br>
+</div>
+<h2>3 // способ оплаты</h2>
+<div class="radio-container">
+    <input type="radio" id="card" name="payment_method" class="round-radio" checked>
+    <label for="card">карта</label><br>
+</div>
+<div class="radio-container">
+    <input type="radio" id="cash" name="payment_method" class="round-radio">
+    <label for="cash">наличные</label><br>
+</div>
+  <!-- список добавленных товаров и сумма заказа -->
+  <div class="cart-left">
+    <h3>добавленные товары</h3>
+    <div class="cart-items">
+    </div>
+    <p class="total">общая сумма: <span id="totalAmount">0</span> ₽</p>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>книга</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/book.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/svg+xml" href="./img/logo2.png">
+  <script src="https://cdn.rawgit.com/bradley/Blotter/master/build/blotter.min.js"></script>
+  <script src="https://rawgit.com/bradley/Blotter/master/build/materials/liquidDistortMaterial.js"></script>
+  <script src="./js/book.js"></script>
+</head>
+
+<body>
+    <!-- экран с сообщением о необходимости повернуть устройство -->
+    <div class="rotateScreen">
+        <div class="phone"></div>
+        <div class="message">пожалуйста, поверните устройство!</div>
+    </div>
+    <!-- навигация -->
+    <div class="header">
+        <div id="sliderContainer">
+            <div id="sliderToggle">
+        </div>
+        <!-- навигационные кнопки -->
+        <div id="buttons">
+            <a href="./about.html" class="nav-button" id="about">ценности</a>
+            <a href="./space.html" class="nav-button" id="space">пространство</a>
+            <a href="./book.html" class="nav-button" id="book">книга</a>
+            <a href="./shop.html" class="nav-button" id="shop">магазин</a>
+            <a href="./events.html" class="nav-button" id="events">афиша</a>
+            <a href="./record.html" class="nav-button" id="record">запись голоса
+                <img class="arrow" src="./img/arrow.svg">
+            </a>
+        </div>
+        </div>
+        <!-- кнопка "домой" -->
+        <form action="./index.html">
+            <button class="home-icon" id="home"></button>
+       </form>
+    </div>
+    <!-- текст с эффектом искажения -->
+    <div id="text"></div>
+    <!-- страницы книги -->
+    <div class="content">
+    <div class="pages" id="pages">
+        <div class="page one"></div>
+        <div class="page two"></div>
+        <div class="page three"></div>
+        <div class="page four"></div>
+        <div class="page five"></div>
+        <div class="page six"></div>
+        <div class="page seven"></div>
+        <div class="page eight"></div>
+        <div class="page nine"></div>
+        <div class="page ten"></div>
+    </div>
+</div>
+<script>
+    let font = new FontFace('Soundblaster', 'url(../fonts/soundblaster-5.otf)');
+     font.load().then(function(loadedFont) {
+     document.fonts.add(loadedFont);
+   });
+ 
+       function size() {
+         let b = 0;
+         if (window.innerHeight > window.innerWidth) {
+           b = (Math.trunc(window.innerWidth / window.innerHeight * 176));
+           return b;
+         } else if (window.innerHeight < window.innerWidth) {
+           b = (Math.trunc(window.innerWidth / window.innerHeight * 176));
+           return b;
+         }
+       }
+ 
+       function pad(size) {
+         let b = [0, 0];
+         b[0] = Math.trunc((2 * size / 90))
+         return [b[0], b[1]]
+       }
+ 
+       let wh = size();
+       let marg = pad(wh)
+ 
+       const innerText = document.getElementById("text");
+       const text = new Blotter.Text("VOICIUM", {
+         family: "Soundblaster",
+         size: wh,
+         fill: "rgb(26, 26, 26)",
+         paddingLeft: 150,
+         paddingRight: 150,
+         paddingTop: 80,
+         paddingBottom: 80,
+         
+       });
+ 
+       text.needsUpdate = true;
+       let material = new Blotter.LiquidDistortMaterial();
+ 
+       material.uniforms.uVolatility.value = 0.1;
+       material.uniforms.uSpeed.value = 0.2;
+       material.uniforms.uSeed.value = 1;
+ 
+       let blotter = new Blotter(material, {
+         texts: text
+       });
+ 
+       let scope = blotter.forText(text);
+       scope.appendTo(innerText);
+       document.addEventListener("mousemove", (e) => {
+         material.uniforms.uVolatility.value = (e.clientX + e.clientY) * 0.00009;
+       });
+ </script>
+</body>
+</html>

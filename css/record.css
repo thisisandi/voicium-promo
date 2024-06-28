@@ -1,0 +1,377 @@
+body {
+  background-color: black;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+  
+/* навигация */
+#slider-container,
+#buttons {
+  position: relative;
+}
+  
+#slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  width: 6vw;
+  height: 2.2vw;
+  border-radius: 2vw;
+  padding: 0.2vw;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+  border: 0.1vw solid white;
+}
+  
+#slider-toggle {
+  position: absolute;
+  right: 0.4vw;
+  width: 1.6vw;
+  height: 1.6vw;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.5s ease, right 0.5s ease; 
+  cursor: pointer !important;
+}
+  
+#slider-container.small-slider {
+  background-color: black;
+  transform: scale(0.6) translateY(-0.5vw) translateX(-4vw); 
+}
+  
+#slider-container.small-slider #slider-toggle {
+  right: calc(100% - 4vw); 
+  transform: translateX(-100%);
+}
+  
+#buttons {
+  display: flex;
+  align-items: center;
+  margin-left: 7.5vw;
+  transition: opacity 0.5s ease;
+}
+  
+#buttons a {
+  margin-right: 1.2vw;
+  text-decoration: none;
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.2vw;
+  text-wrap: nowrap;
+  background-color: black;
+  padding: 0.5vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border-radius: 0.5vw;
+  border: 0.1vw solid white;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, background-color 0.5s ease;
+}
+  
+#buttons a:hover {
+  border: 0.1vw solid #B61427;
+  transition: 0.5s;
+}
+  
+.hidden {
+  opacity: 0;
+}
+  
+#home {
+  background-color: rgba(102, 102, 102, 0.4);
+  width: 2.2vw;
+  height: 2.2vw;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2vw;
+  background-image: url('../img/home.svg');
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.home-icon {
+  width: 1.5vw;
+  height: 1.5vw;
+}
+  
+#home:hover {
+  border: 0.1vw solid #B61427;
+  transition: 0.5s;
+  cursor: pointer;
+}
+  
+.header {
+  justify-content: space-between;
+  display: flex;
+  width: 95%;
+  margin: 1vw auto;
+}
+  
+.arrow {
+   width: 0.8vw;
+  height: 0.8vw;
+}
+
+h2 {
+  font-family: 'IgraSans';
+  color: #FFFFFF;
+  font-size: 3vw;
+  margin-top: 20vw;
+  margin-left: 37vw;
+  white-space: nowrap;
+}
+
+/* иконка микрофона */
+.microoo {
+  border: 0.1vw solid white;
+  border-radius: 1vw;
+  width: 6vw; 
+  height: 6vw;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: 2vw;
+  margin-left: 45vw;
+  position: absolute;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.microoo.active {
+    border: 0.1vw solid #B61427;
+}
+
+.micro-icon {
+  width:  5vw; 
+  height: 5vw;
+}
+
+/* счетчик времени */
+.counter {
+  font-family: 'IgraSans';
+  color: #FFFFFF;
+  font-size: 1vw;
+  position: absolute;
+  margin-top: 9vw;
+  margin-left: 46vw;
+}
+
+/* линейные волны */
+.wave1 {
+  margin-top: -9vw;
+  margin-left: -1vw;
+  z-index: -111;
+  width: 50vw;
+  height: 20vw;
+  position: absolute;
+  animation: wavy1 2s infinite;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.wave2 {
+  margin-top: -4vw;
+  margin-left: -1vw;
+  width: 50vw;
+  height: 20vw;
+  position: absolute;
+  z-index: -111;
+  animation: wavy2 2s infinite;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.wave3 {
+  margin-top: -5vw;
+  margin-left: -1vw;
+  width: 50vw;
+  height: 20vw;
+  position: absolute;
+  z-index: -111;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.wave1r {
+  margin-top: -6vw;
+  margin-left: 50vw;
+  width: 50vw;
+  height: 20vw;
+  position: absolute;
+  z-index: -111;
+  animation: wavy1 2s infinite;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.wave2r {
+  margin-top: -9vw;
+  margin-left: 50vw;
+  width: 50vw;
+  height: 20vw;
+  position: absolute;
+  z-index: -111;
+  animation: wavy2 2s infinite;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.wave3r {
+  margin-top: -6vw;
+  margin-left: 50vw;
+  width: 50vw;
+  height: 20vw;
+  position: absolute;
+  z-index: -111;
+  animation: wavy3 2s infinite;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+@keyframes wavy1 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-0.2vw) translateX(-0.5vw);
+  }
+    100% {
+        transform: translateY(0) translateX(0);
+      }
+}
+
+@keyframes wavy2 {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-0.3vw) translateX(0.5vw);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes wavy3 {
+  0% {
+      transform: translateY(0) translateX(0);
+  }
+  50% {
+      transform: translateY(1vw) translateX(0.5vw);
+  }
+  100% {
+      transform: translateY(0) translateX(0);
+  }
+}
+
+/* кнопка "далее" */
+.nextbutton2 {
+  margin-top: 20vw;
+  margin-left: 94.5vw;  
+  position: absolute;
+  border: 0.1vw solid white;
+  width: 3vw;
+  align-items: center;
+  justify-content: center;
+  height: 3vw;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
+}
+
+.nextbutton2:hover {
+  border: 0.1vw solid #B61427;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.next2 {
+  margin-left: 0.6vw; 
+  margin-top: 0.5vw;
+  width: 2vw;
+  height: 2vw;
+}
+
+/* страница прослушивания записи */
+.pageListen {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h3 {
+  font-family: 'IgraSans';
+  color: #FFFFFF;
+  font-size: 3vw;
+  margin-top: 20vw;
+  white-space: nowrap;
+}
+
+/* кнопка "плей" */
+.playa {
+  background-color: black;
+  border: 0.1vw solid white;
+  border-radius: 50%;
+  width: 2.5vw;
+  height: 2.5vw;
+  margin-right:35vw;
+  margin-top: 0.9vw;
+  cursor: pointer;
+}
+
+.miniplay {
+  width: 1.5vw;
+  height: 1.5vw;
+  margin-left: 0.1vw;
+}
+
+/* ползунок прослушивания записи */
+.progress-bar-container {
+  width: 34vw;
+  height: 1vw;
+  background-color: black;
+  border: 0.1vw solid white;
+  border-radius: 1vw;
+  margin-top: 1.5vw;
+  margin-left: 3vw;
+  position: absolute;
+}
+
+.progress-bar {
+  width: 3%; 
+  height: 100%; 
+  margin-bottom: 0.3vw;
+  border-radius: 1vw;
+  background-color: #B61427;
+}
+
+.progress-bar::-webkit-progress-bar {
+  background-color: transparent; 
+}
+
+.progress-bar::-webkit-progress-value {
+  background-color: #B61427;
+  border-radius: 1vw;
+}
+
+.progress-bar::-moz-progress-bar {
+  background-color: #B61427;
+  border-radius: 1vw; 
+}
+
+.smooth-transition {
+  transition: width 0.3s cubic-bezier(0.2, 0, 0.2, 1);
+}

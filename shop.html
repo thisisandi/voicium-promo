@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>магазин</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/shop.css">
+  <link rel="icon" type="image/svg+xml" href="./img/logo2.png">
+  <script src="./js/shop.js"></script>
+  <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+</head>
+
+<body>
+  <!-- экран загрузки -->
+  <div id="loading-screen">
+    <div class="loadContainer">
+      <div class="dot dot1"></div>
+      <div class="dot dot2"></div>
+      <div class="dot dot3"></div>
+    </div>
+  </div>
+  <!-- экран с сообщением о необходимости повернуть устройство -->
+  <div class="rotateScreen">
+    <div class="phone"></div>
+    <div class="message">пожалуйста, поверните устройство!</div>
+  </div>
+  <!-- навигация -->
+  <div class="header">
+    <div id="sliderContainer">
+        <div id="sliderToggle">
+    </div>
+    <!-- навигационные кнопки -->
+    <div id="buttons">
+      <a href="./about.html" class="nav-button" id="about">ценности</a>
+      <a href="./space.html" class="nav-button" id="space">пространство</a>
+      <a href="./book.html" class="nav-button" id="book">книга</a>
+      <a href="./shop.html" class="nav-button" id="shop">магазин</a>
+      <a href="./events.html" class="nav-button" id="events">афиша</a>
+      <a href="./record.html" class="nav-button" id="record">запись голоса
+          <img class="arrow" src="./img/arrow.svg">
+      </a>
+    </div>
+    </div>
+    <!-- кнопка "домой" -->
+    <form action="./index.html">
+       <button class="home-icon" id="home"></button>
+    </form>
+  </div>
+  <!-- корзина -->
+  <div class="cartContainer" id="cartContainer">
+    <div href="./cart.html" class="cart ">
+      <img src="./img/cart.svg" class="cart-icon">
+      <div class="cart-counter">00</div>
+    </div>
+  </div>
+  <!-- карточки товаров -->
+  <div class="container">
+    <div class="card1 card">
+      <img src="./img/sweatshot.svg" class="cardpic1">
+      <p class="name name1" id="name1">базовый свитшот с лого <br></p><p class="price price1" id="price1">2999₽</p>
+      <div class="sizes sizes1"  id="sizes1">
+        <span class="sizeShirt">s</span>
+        <span class="sizeShirt">m</span>
+        <span class="sizeShirt">l</span>
+        <span class="sizeShirt">xl</span>
+      </div>
+      <div class="plus plus1" id="plus1">+</div>
+    </div>
+    <div class="card2 card">
+      <img src="./img/t-shirt.svg" class="cardpic2">
+      <p class="name name2" id="name2">футболка с принтом <br></p><p class="price price2" id="price2">1999₽</p>
+      <div class="sizes sizes2" id="sizes2">
+        <span class="sizeTshirt">s</span>
+        <span class="sizeTshirt">m</span>
+        <span class="sizeTshirt">l</span>
+        <span class="sizeTshirt">xl</span>
+      </div>
+      <div class="plus plus2" id="plus2">+</div>
+    </div> 
+    <div class="card3 card">
+      <img src="./img/bag.svg" class="cardpic3">
+      <p class="name name3" id="name3">шопер с лого <br></p><p class="price price3" id="price3">999₽</p>
+      <div class="plus plus3" id="plus3">+</div>
+    </div> 
+    <div class="card4 card">
+      <img src="./img/book.svg" class="cardpic4">
+      <p class="name name4" id="name4">книга о проекте <br></p><p class="price price4" id="price4">899₽</p>
+      <div class="plus plus4" id="plus4">+</div>
+    </div> 
+    <div class="card5 card">
+      <img src="./img/things.svg" class="cardpic5">
+      <p class="name name5" id="name5">брелоки в ассортименте <br></p><p class="price price5" id="price5">499₽</p>
+      <div class="plus plus5" id="plus5">+</div>
+    </div> 
+    <div class="card6 card">
+      <img src="./img/cups.svg" class="cardpic6">
+      <p class="name name6" id="name6">кружки в ассортименте <br></p><p class="price price6" id="price6">699₽</p>
+      <div class="plus plus6" id="plus6">+</div>
+    </div> 
+  </div>
+</body>
+</html>

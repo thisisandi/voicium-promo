@@ -1,0 +1,11 @@
+@import "reset.css";
+
+@font-face {
+    font-family: "IgraSans";
+    src: url("../fonts/IgraSans.otf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Soundblaster";
+    src: url("../fonts/soundblaster-5.otf");
+  }

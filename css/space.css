@@ -1,0 +1,1328 @@
+body {
+  background-color: #2A2A2A;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* навигация */
+#sliderContainer,
+#buttons {
+  position: relative;
+}
+
+#sliderContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  width: 6vw;
+  height: 2.2vw;
+  border-radius: 2vw;
+  padding: 0.2vw;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+#sliderToggle {
+  position: absolute;
+  right: 0.4vw;
+  width: 1.6vw;
+  height: 1.6vw;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.5s ease, right 0.5s ease; 
+  cursor: pointer !important;
+}
+
+#sliderContainer.small-slider {
+  background-color: rgba(102, 102, 102, 0.4);
+  transform: scale(0.6) translateY(-0.5vw) translateX(-4vw); 
+}
+
+#sliderContainer.small-slider #sliderToggle {
+  right: calc(100% - 4vw); 
+  transform: translateX(-100%);
+}
+
+#buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 7.5vw;
+  transition: opacity 0.5s ease;
+}
+
+#buttons a {
+  margin-right: 1.2vw;
+  text-decoration: none;
+  color: black;
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.2vw;
+  text-wrap: nowrap;
+  background-color: rgba(102, 102, 102, 0.4);
+  padding: 0.5vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border-radius: 0.5vw;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, background-color 0.5s ease;
+}
+
+#buttons a:hover {
+  background-color: black;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#home {
+  background-color: rgba(102, 102, 102, 0.4);
+  width: 2.2vw;
+  height: 2.2vw;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2vw;
+  background-image: url('../img/home.svg');
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.home-icon {
+  width: 1.5vw;
+  height: 1.5vw;
+}
+
+#home:hover {
+  background-color: black;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.header {
+  justify-content: space-between;
+  display: flex;
+  width: 95%;
+  margin: 1vw auto;
+}
+
+.arrow {
+  width: 0.8vw;
+  height: 0.8vw;
+  margin-left: 0.2vw;
+}
+
+.header, #sliderContainer, #home {
+  position: relative;
+  z-index: 10001;
+}
+
+/* фоны */
+.overlay-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.overlayBuild, .overlay-build2 {
+  position: relative;
+  width: 51%;
+  height: 100%;
+  background-size: 100%;
+  background-position: center;
+}
+  
+.overlayBuild {
+  background-image: url(../img/savezone.svg);
+}
+  
+.overlay-build2 {
+  background-image: url(../img/viewup.svg);
+}
+
+/* планы пространства */
+.plans {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 10000;
+}
+
+.firstfloor {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 50.4vw;
+  top: 0.1vw;
+  z-index: -1;
+}
+
+.secondfloor {
+  display: none;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 53.3vw;
+  top: 4.5vw;
+  z-index: -2;
+}
+
+.floorName1 {
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.5vw;
+  margin-top: 51vw;
+  margin-left: 51vw;
+  color: #FFBE0B;
+  cursor: pointer;
+}
+
+.floorName2 {
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.5vw;
+  margin-top: -3.5vw;
+  margin-left: 51vw;
+  color: #FFBE0B;
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+/* названия комнат */
+.roomName1, .roomName2, .roomName3, .roomName4 {
+  position: absolute;
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.5vw;
+  margin-top: 46.5vw;
+  margin-left: 1vw;
+  color: #FFBE0B;
+  z-index: 999999;
+  display: none;
+}
+
+.roomName1 {
+  display: block;
+}
+
+/* номера комнат на плане */
+.places {
+  position: absolute;
+  font-family: "IgraSans", sans-serif;
+  font-size: 4vw;
+  color: white;
+  z-index: 3203202030;
+}
+
+.placeOne {
+  color: #FFBE0B;
+}
+
+.placeOne:hover {
+  color: #FFBE0B;
+  transition: 0.5s;
+}
+
+.placeTwo:hover {
+  color: #FFBE0B;
+  transition: 0.5s;
+}
+
+.placeThree:hover {
+  color: #FFBE0B;
+  transition: 0.5s;
+}
+
+.placeFour:hover {
+  color: #FFBE0B;
+  transition: 0.5s;
+}
+
+.placeOne {
+  position: absolute;
+  left: 88.5vw;
+  top: 41vw;
+  cursor: pointer;
+}
+
+.placeTwo {
+  position: absolute;
+  left: 68.5vw;
+  top: 2vw;
+  cursor: pointer;
+}
+
+.placeThree {
+  position: absolute;
+  left: 70vw;
+  top: 4vw;
+  cursor: pointer;
+  display: none;
+}
+
+.placeFour {
+  position: absolute;
+  left: 77vw;
+  top: 40vw;
+  cursor: pointer;
+  display: none;
+}
+
+/* рендеры комнат */
+.room2, .room3, .room4 {
+  position: absolute;
+  width: 51%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.room2 {
+  background-image: url(../img/recordzone.svg);
+  display: none;
+  background-repeat: no-repeat;
+  margin-left: -2vw;
+  width: 62vw;
+  height: 100vw;
+}
+
+.room3 {
+  background-image: url(../img/expozone.svg);
+  background-repeat: no-repeat;
+  display: block;
+  margin-left: -2vw;
+  width: 62vw;
+  height: 100vw;
+}
+
+.room4 {
+  background-image: url(../img/lecturezone.svg);
+  background-repeat: no-repeat;
+  display: none;
+  margin-left: -2vw;
+  width: 62vw;
+  height: 100vw;
+}
+
+/* экран с сообщением о необходимости повернуть устройство */
+.rotateScreen {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'IgraSans';
+  font-size: 1.5vw;
+  flex-direction: column;
+}
+
+.phone {
+  height: 20vw;
+  width: 40vw;
+  border: 0.5vw solid black;
+  border-radius: 1.5vw;
+  animation: rotate 1.5s ease-in-out infinite alternate;
+  margin-bottom: 10vw;
+}
+
+.message {
+  color: black;
+  font-size: 4.5vw;
+  margin-top: 3vw;
+}
+
+@keyframes rotate {
+  0% {
+      transform: rotate(0deg)
+  }
+  50% {
+      transform: rotate(-90deg)
+  }
+  100% {
+      transform: rotate(-90deg)
+  }
+}
+
+/* отображение сообщения о необходимости повернуть устройство */
+@media all and (orientation: portrait){
+  .rotateScreen{
+      display: flex;
+}
+  .header {
+      display: none;
+  }
+  
+  .content {
+      display: none;
+      opacity: 0;
+  }
+}
+
+/* адаптивность для MacBook Pro ’15.4 */
+@media only screen and (min-width: 1680px) and (max-width: 1680px) and (min-height: 1050px) and (max-height: 1050px) {
+  .firstfloor {
+    position: absolute;
+    width: 44.5vw;
+    height: 180vw;
+    left: 53vw;
+    top: -57vw;
+    z-index: -1;
+  }
+  
+  .secondfloor {
+    display: none;
+    position: absolute;
+    width: 37vw;
+    height: 130vw;
+    left: 59.7vw;
+    top: -29vw;
+    z-index: -2;
+  }
+
+  .roomName1, .roomName2, .roomName3, .roomName4 {
+    position: absolute;
+    font-family: "IgraSans", sans-serif;
+    font-size: 1.5vw;
+    margin-top: 55vw;
+    margin-left: 1vw;
+    color: #FFBE0B;
+    z-index: 999999;
+    display: none;
+  }
+  
+  .roomName1 {
+    display: block;
+  }
+
+  .placeOne {
+    position: absolute;
+    left: 88.5vw;
+    top: 47vw;
+    cursor: pointer;
+  }
+  
+  .placeTwo {
+    position: absolute;
+    left: 68.5vw;
+    top: 8vw;
+    cursor: pointer;
+  }
+  
+  .placeThree {
+    position: absolute;
+    left: 70vw;
+    top: 8vw;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .placeFour {
+    position: absolute;
+    left: 77vw;
+    top: 45vw;
+    cursor: pointer;
+    display: none;
+  }
+
+.floorName1 {
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.5vw;
+  margin-top: 60vw;
+  margin-left: 51vw;
+  color: #FFBE0B;
+  cursor: pointer;
+}
+
+.room2 {
+  background-image: url(../img/recordzone.svg);
+  display: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room3 {
+  background-image: url(../img/expozone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room4 {
+  background-image: url(../img/lecturezone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: none;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+}
+
+/* адаптивность для MacBook Pro ’15 */
+@media only screen and (min-width: 1440px) and (max-width: 1440px) and (min-height: 900px) and (max-height: 900px) {
+  .firstfloor {
+    position: absolute;
+    width: 44.5vw;
+    height: 180vw;
+    left: 53.3vw;
+    top: -57vw;
+    z-index: -1;
+  }
+  
+  .secondfloor {
+    display: none;
+    position: absolute;
+    width: 37vw;
+    height: 130vw;
+    left: 59.7vw;
+    top: -29vw;
+    z-index: -2;
+  }
+
+  .roomName1, .roomName2, .roomName3, .roomName4 {
+    position: absolute;
+    font-family: "IgraSans", sans-serif;
+    font-size: 1.5vw;
+    margin-top: 55vw;
+    margin-left: 1vw;
+    color: #FFBE0B;
+    z-index: 999999;
+    display: none;
+  }
+  
+  .roomName1 {
+    display: block;
+  }
+
+  .placeOne {
+    position: absolute;
+    left: 88.5vw;
+    top: 47vw;
+    cursor: pointer;
+  }
+  
+  .placeTwo {
+    position: absolute;
+    left: 68.5vw;
+    top: 8vw;
+    cursor: pointer;
+  }
+  
+  .placeThree {
+    position: absolute;
+    left: 70vw;
+    top: 8vw;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .placeFour {
+    position: absolute;
+    left: 77vw;
+    top: 45vw;
+    cursor: pointer;
+    display: none;
+  }
+
+.floorName1 {
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.5vw;
+  margin-top: 60vw;
+  margin-left: 51vw;
+  color: #FFBE0B;
+  cursor: pointer;
+}
+
+.room2 {
+  background-image: url(../img/recordzone.svg);
+  display: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room3 {
+  background-image: url(../img/expozone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room4 {
+  background-image: url(../img/lecturezone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: none;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+}
+
+/* адаптивность для MacBook Pro ’11.6 */
+@media only screen and (min-width: 1366px) and (max-width: 1366px) and (min-height: 768px) and (max-height: 768px) {
+  .firstfloor {
+    position: absolute;
+    width: 44.5vw;
+    height: 180vw;
+    left: 53.3vw;
+    top: -57vw;
+    z-index: -1;
+  }
+  
+  .secondfloor {
+    display: none;
+    position: absolute;
+    width: 37vw;
+    height: 130vw;
+    left: 59.7vw;
+    top: -28.5vw;
+    z-index: -2;
+  }
+
+  .roomName1, .roomName2, .roomName3, .roomName4 {
+    position: absolute;
+    font-family: "IgraSans", sans-serif;
+    font-size: 1.5vw;
+    margin-top: 55vw;
+    margin-left: 1vw;
+    color: #FFBE0B;
+    z-index: 999999;
+    display: none;
+  }
+  
+  .roomName1 {
+    display: block;
+  }
+
+  .placeOne {
+    position: absolute;
+    left: 88.5vw;
+    top: 47vw;
+    cursor: pointer;
+  }
+  
+  .placeTwo {
+    position: absolute;
+    left: 68.5vw;
+    top: 8vw;
+    cursor: pointer;
+  }
+  
+  .placeThree {
+    position: absolute;
+    left: 70vw;
+    top: 8vw;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .placeFour {
+    position: absolute;
+    left: 77vw;
+    top: 45vw;
+    cursor: pointer;
+    display: none;
+  }
+
+.floorName1 {
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.5vw;
+  margin-top: 60vw;
+  margin-left: 51vw;
+  color: #FFBE0B;
+  cursor: pointer;
+}
+
+.room2 {
+  background-image: url(../img/recordzone.svg);
+  display: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room3 {
+  background-image: url(../img/expozone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room4 {
+  background-image: url(../img/lecturezone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: none;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+}
+
+/* адаптивность для MacBook Pro ’13 */
+@media only screen and (min-width: 1280px) and (max-width: 1280px) and (min-height: 800px) and (max-height: 800px) {
+  .firstfloor {
+    position: absolute;
+    width: 44.5vw;
+    height: 180vw;
+    left: 53.3vw;
+    top: -57vw;
+    z-index: -1;
+  }
+  
+  .secondfloor {
+    display: none;
+    position: absolute;
+    width: 37vw;
+    height: 130vw;
+    left: 59.7vw;
+    top: -29vw;
+    z-index: -2;
+  }
+
+  .roomName1, .roomName2, .roomName3, .roomName4 {
+    position: absolute;
+    font-family: "IgraSans", sans-serif;
+    font-size: 1.5vw;
+    margin-top: 55vw;
+    margin-left: 1vw;
+    color: #FFBE0B;
+    z-index: 999999;
+    display: none;
+  }
+  
+  .roomName1 {
+    display: block;
+  }
+
+  .placeOne {
+    position: absolute;
+    left: 88.5vw;
+    top: 47vw;
+    cursor: pointer;
+  }
+  
+  .placeTwo {
+    position: absolute;
+    left: 68.5vw;
+    top: 8vw;
+    cursor: pointer;
+  }
+  
+  .placeThree {
+    position: absolute;
+    left: 70vw;
+    top: 8vw;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .placeFour {
+    position: absolute;
+    left: 77vw;
+    top: 45vw;
+    cursor: pointer;
+    display: none;
+  }
+
+.floorName1 {
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.5vw;
+  margin-top: 60vw;
+  margin-left: 51vw;
+  color: #FFBE0B;
+  cursor: pointer;
+}
+
+.room2 {
+  background-image: url(../img/recordzone.svg);
+  display: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room3 {
+  background-image: url(../img/expozone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room4 {
+  background-image: url(../img/lecturezone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: none;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+}
+
+/* адаптивность для iPad Landscape */
+@media only screen and (min-width: 1024px) and (max-width: 1024px) and (min-height: 768px) and (max-height: 768px) {
+  .firstfloor {
+    position: absolute;
+    width: 44.5vw;
+    height: 200vw;
+    left: 53.3vw;
+    top: -55.6vw;
+    z-index: -1;
+  }
+  
+  .secondfloor {
+    display: none;
+    position: absolute;
+    width: 37vw;
+    height: 130vw;
+    left: 59.7vw;
+    top: -23vw;
+    z-index: -2;
+  }
+
+  .roomName1, .roomName2, .roomName3, .roomName4 {
+    position: absolute;
+    font-family: "IgraSans", sans-serif;
+    font-size: 1.5vw;
+    margin-top: 67vw;
+    margin-left: 1vw;
+    color: #FFBE0B;
+    z-index: 999999;
+    display: none;
+  }
+  
+  .roomName1 {
+    display: block;
+  }
+
+  .placeOne {
+    position: absolute;
+    left: 88.5vw;
+    top: 58vw;
+    cursor: pointer;
+  }
+  
+  .placeTwo {
+    position: absolute;
+    left: 69vw;
+    top: 18vw;
+    cursor: pointer;
+  }
+  
+  .placeThree {
+    position: absolute;
+    left: 71vw;
+    top: 14vw;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .placeFour {
+    position: absolute;
+    left: 77vw;
+    top: 52vw;
+    cursor: pointer;
+    display: none;
+  }
+
+.floorName1 {
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.5vw;
+  margin-top: 72vw;
+  margin-left: 51vw;
+  color: #FFBE0B;
+  cursor: pointer;
+}
+
+.room2 {
+  background-image: url(../img/recordzone.svg);
+  display: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: -2vw;
+  margin-top: 1vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room3 {
+  background-image: url(../img/expozone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  margin-left: -2vw;
+  margin-top: 1vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room4 {
+  background-image: url(../img/lecturezone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: none;
+  margin-left: -2vw;
+  margin-top: 0.2vw;
+  width: 52vw;
+  height: 100vw;
+}
+}
+
+/* адаптивность для Full HD */
+@media only screen and (min-width: 1920px) and (max-width: 1920px) and (min-height: 1080px) and (max-height: 1080px) {
+  .firstfloor {
+    position: absolute;
+    width: 44.5vw;
+    height: 180vw;
+    left: 53.3vw;
+    top: -61vw;
+    z-index: -1;
+  }
+  
+  .secondfloor {
+    display: none;
+    position: absolute;
+    width: 37vw;
+    height: 130vw;
+    left: 59.7vw;
+    top: -32.5vw;
+    z-index: -2;
+  }
+
+  .roomName1, .roomName2, .roomName3, .roomName4 {
+    position: absolute;
+    font-family: "IgraSans", sans-serif;
+    font-size: 1.5vw;
+    margin-top: 49vw;
+    margin-left: 1vw;
+    color: #FFBE0B;
+    z-index: 999999;
+    display: none;
+  }
+  
+  .roomName1 {
+    display: block;
+  }
+
+  .placeOne {
+    position: absolute;
+    left: 88.5vw;
+    top: 43vw;
+    cursor: pointer;
+  }
+  
+  .placeTwo {
+    position: absolute;
+    left: 68.5vw;
+    top: 4vw;
+    cursor: pointer;
+  }
+  
+  .placeThree {
+    position: absolute;
+    left: 70vw;
+    top: 5vw;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .placeFour {
+    position: absolute;
+    left: 78vw;
+    top: 41vw;
+    cursor: pointer;
+    display: none;
+  }
+
+.floorName1 {
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.5vw;
+  margin-top: 54vw;
+  margin-left: 51vw;
+  color: #FFBE0B;
+  cursor: pointer;
+}
+
+.room2 {
+  background-image: url(../img/recordzone.svg);
+  display: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room3 {
+  background-image: url(../img/expozone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room4 {
+  background-image: url(../img/lecturezone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: none;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+}
+
+/* адаптивность для HD */
+@media only screen and (min-width: 1366px) and (max-width: 1366px) and (min-height: 768px) and (max-height: 768px) {
+  .firstfloor {
+    position: absolute;
+    width: 44.5vw;
+    height: 180vw;
+    left: 53.5vw;
+    top: -61vw;
+    z-index: -1;
+  }
+  
+  .secondfloor {
+    display: none;
+    position: absolute;
+    width: 37vw;
+    height: 130vw;
+    left: 59.7vw;
+    top: -32vw;
+    z-index: -2;
+  }
+
+  .roomName1, .roomName2, .roomName3, .roomName4 {
+    position: absolute;
+    font-family: "IgraSans", sans-serif;
+    font-size: 1.5vw;
+    margin-top: 48vw;
+    margin-left: 1vw;
+    color: #FFBE0B;
+    z-index: 999999;
+    display: none;
+  }
+  
+  .roomName1 {
+    display: block;
+  }
+
+  .placeOne {
+    position: absolute;
+    left: 88.5vw;
+    top: 43vw;
+    cursor: pointer;
+  }
+  
+  .placeTwo {
+    position: absolute;
+    left: 68.5vw;
+    top: 4vw;
+    cursor: pointer;
+  }
+  
+  .placeThree {
+    position: absolute;
+    left: 70vw;
+    top: 5vw;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .placeFour {
+    position: absolute;
+    left: 78vw;
+    top: 43vw;
+    cursor: pointer;
+    display: none;
+  }
+
+.floorName1 {
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.5vw;
+  margin-top: 53vw;
+  margin-left: 51vw;
+  color: #FFBE0B;
+  cursor: pointer;
+}
+
+.room2 {
+  background-image: url(../img/recordzone.svg);
+  display: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room3 {
+  background-image: url(../img/expozone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room4 {
+  background-image: url(../img/lecturezone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: none;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+}
+
+/* адаптивность для 4k */
+@media only screen and (min-width: 3840px) and (max-width: 3840px) and (min-height: 2160px) and (max-height: 2160px) {
+  .firstfloor {
+    position: absolute;
+    width: 44.5vw;
+    height: 180vw;
+    left: 53.3vw;
+    top: -61vw;
+    z-index: -1;
+  }
+  
+  .secondfloor {
+    display: none;
+    position: absolute;
+    width: 37vw;
+    height: 130vw;
+    left: 59.7vw;
+    top: -32.5vw;
+    z-index: -2;
+  }
+
+  .roomName1, .roomName2, .roomName3, .roomName4 {
+    position: absolute;
+    font-family: "IgraSans", sans-serif;
+    font-size: 1.5vw;
+    margin-top: 49vw;
+    margin-left: 1vw;
+    color: #FFBE0B;
+    z-index: 999999;
+    display: none;
+  }
+  
+  .roomName1 {
+    display: block;
+  }
+
+  .placeOne {
+    position: absolute;
+    left: 88.5vw;
+    top: 43vw;
+    cursor: pointer;
+  }
+  
+  .placeTwo {
+    position: absolute;
+    left: 68.5vw;
+    top: 4vw;
+    cursor: pointer;
+  }
+  
+  .placeThree {
+    position: absolute;
+    left: 70vw;
+    top: 5vw;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .placeFour {
+    position: absolute;
+    left: 78vw;
+    top: 41vw;
+    cursor: pointer;
+    display: none;
+  }
+
+.floorName1 {
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.5vw;
+  margin-top: 54vw;
+  margin-left: 51vw;
+  color: #FFBE0B;
+  cursor: pointer;
+}
+
+.room2 {
+  background-image: url(../img/recordzone.svg);
+  display: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room3 {
+  background-image: url(../img/expozone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room4 {
+  background-image: url(../img/lecturezone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: none;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+}
+
+/* адаптивность для 2k */
+@media only screen and (min-width: 2560px) and (max-width: 2560px) and (min-height: 1440px) and (max-height: 1440px) {
+  .firstfloor {
+    position: absolute;
+    width: 44.5vw;
+    height: 180vw;
+    left: 53.3vw;
+    top: -61vw;
+    z-index: -1;
+  }
+  
+  .secondfloor {
+    display: none;
+    position: absolute;
+    width: 37vw;
+    height: 130vw;
+    left: 59.7vw;
+    top: -32.5vw;
+    z-index: -2;
+  }
+
+  .roomName1, .roomName2, .roomName3, .roomName4 {
+    position: absolute;
+    font-family: "IgraSans", sans-serif;
+    font-size: 1.5vw;
+    margin-top: 49vw;
+    margin-left: 1vw;
+    color: #FFBE0B;
+    z-index: 999999;
+    display: none;
+  }
+  
+  .roomName1 {
+    display: block;
+  }
+
+  .placeOne {
+    position: absolute;
+    left: 88.5vw;
+    top: 43vw;
+    cursor: pointer;
+  }
+  
+  .placeTwo {
+    position: absolute;
+    left: 68.5vw;
+    top: 4vw;
+    cursor: pointer;
+  }
+  
+  .placeThree {
+    position: absolute;
+    left: 70vw;
+    top: 5vw;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .placeFour {
+    position: absolute;
+    left: 78vw;
+    top: 41vw;
+    cursor: pointer;
+    display: none;
+  }
+
+.floorName1 {
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.5vw;
+  margin-top: 54vw;
+  margin-left: 51vw;
+  color: #FFBE0B;
+  cursor: pointer;
+}
+
+.room2 {
+  background-image: url(../img/recordzone.svg);
+  display: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room3 {
+  background-image: url(../img/expozone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+
+.room4 {
+  background-image: url(../img/lecturezone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: none;
+  margin-left: -2vw;
+  width: 52vw;
+  height: 100vw;
+}
+}

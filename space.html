@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>пространство</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/space.css">
+  <link rel="icon" type="image/svg+xml" href="./img/logo2.png">
+  <script src="./js/space.js"></script>
+</head>
+
+<body>
+  <!-- экран с сообщением о необходимости повернуть устройство -->
+  <div class="rotateScreen">
+    <div class="phone"></div>
+    <div class="message">пожалуйста, поверните устройство!</div>
+  </div>
+  <!-- навигация -->
+  <div class="header">
+    <div id="sliderContainer">
+        <div id="sliderToggle">
+    </div>
+    <!-- навигационные кнопки -->
+    <div id="buttons">
+      <a href="./about.html" class="nav-button" id="about">ценности</a>
+      <a href="./space.html" class="nav-button" id="space">пространство</a>
+      <a href="./book.html" class="nav-button" id="book">книга</a>
+      <a href="./shop.html" class="nav-button" id="shop">магазин</a>
+      <a href="./events.html" class="nav-button" id="events">афиша</a>
+      <a href="./record.html" class="nav-button" id="record">запись голоса
+          <img class="arrow" src="./img/arrow.svg">
+      </a>
+    </div>
+    </div>
+    <!-- кнопка "домой" -->
+     <form action="./index.html">
+       <button class="home-icon" id="home"></button>
+    </form>
+  </div>
+  <div class="content">
+    <!-- фоны -->
+    <div class="overlay-container">
+      <div class="overlayBuild" id="overlayBuild"></div>
+      <div class="overlay-build2" id="overlay-build2"></div>
+    </div>
+    <!-- названия комнат -->
+    <p class="roomName1" id="roomName1">1 // зона хранения</p>
+    <p class="roomName2" id="roomName2">2 // студия звукозаписи</p>
+    <p class="roomName3" id="roomName3">3 // выставочная зона</p>
+    <p class="roomName4" id="roomName4">4 // лекторий</p>
+    <!-- рендеры комнат -->
+    <div class="room2" id="room2"></div>
+    <div class="room3" id="room3"></div>
+    <div class="room4" id="room4"></div>
+    <!-- планы пространства -->
+    <div class="plans">
+      <p class="floorName1" id="floorName1">1 этаж</p>
+      <img class="firstfloor" id="firstfloor" src="./img/firstfloor.svg">
+      <p class="floorName2" id="floorName2">2 этаж</p>
+      <img class="secondfloor" id="secondfloor" src="./img/secondfloor.svg">
+    </div>
+    <!-- номера комнат на плане -->
+    <div class="places">
+      <p class="placeOne" id="placeOne">1</p>
+      <p class="placeTwo" id="placeTwo">2</p>
+      <p class="placeThree" id="placeThree">3</p>
+      <p class="placeFour" id="placeFour">4</p>
+  </div>
+</div>
+</body>
+</html>

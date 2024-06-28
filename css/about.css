@@ -1,0 +1,209 @@
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* навигация */
+#sliderContainer,
+#buttons {
+  position: fixed;
+  z-index: 100000;
+}
+
+#sliderContainer {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  width: 6vw;
+  height: 2.2vw;
+  border-radius: 2vw;
+  padding: 0.2vw;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+}
+  
+#sliderToggle {
+  position: absolute;
+  right: 0.4vw;
+  width: 1.6vw;
+  height: 1.6vw;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.5s ease, right 0.5s ease; 
+  cursor: pointer !important;
+}
+
+#sliderContainer.smallSlider {
+  background-color: rgba(102, 102, 102, 0.4);
+  transform: scale(0.6) translateY(-0.5vw) translateX(-4vw); 
+}
+  
+#sliderContainer.smallSlider #sliderToggle {
+  right: calc(100% - 4vw); 
+  transform: translateX(-100%);
+}
+  
+#buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 7.5vw;
+  transition: opacity 0.5s ease;
+}
+
+#buttons a {
+  margin-right: 1.2vw;
+  text-decoration: none;
+  color: black;
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.2vw;
+  text-wrap: nowrap;
+  background-color: rgba(102, 102, 102, 0.4);
+  padding: 0.5vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border-radius: 0.5vw;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, background-color 0.5s ease;
+}
+  
+#buttons a:hover {
+  background-color: black;
+}
+  
+.hidden {
+  opacity: 0;
+}
+
+#home {
+  position: fixed;
+  border: none;
+  background-image: url('../img/home.svg');
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 92.4vw;
+  background-color: rgba(102, 102, 102, 0.4);
+  width: 2.2vw;
+  height: 2.2vw;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2vw;
+}
+
+.home-icon {
+  width: 1.5vw;
+  height: 1.5vw;
+}
+
+#home:hover {
+  background-color: black;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.header {
+  justify-content: space-between;
+  display: flex;
+  width: 95%;
+  margin: 1vw auto;
+}
+
+.arrow {
+  width: 0.8vw;
+  height: 0.8vw;
+}
+
+/* текст */
+p {
+  color: #FFBE0B;
+  font-family: "IgraSans", sans-serif;
+  font-size: 3.5vw;
+  text-align: center;
+  margin-top: 4vw;
+}
+
+.blurred {
+  filter: blur(1vw);
+  transition: filter 0.5s ease;
+}
+
+.visible {
+  filter: blur(0);
+  transition: filter 0.5s ease;
+}
+
+#more {
+  cursor: pointer;
+  margin-bottom: 2vw;
+}
+
+#more:hover {
+  color: #B61427;
+  transition: 1s;
+}
+.container {
+  position: relative;
+  width: 100vw;
+}
+
+.arrows {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow1, .arrow2 {
+  position: absolute;
+  width: 3vw;
+  height: 3vw;
+}
+
+.arrow1 {
+  left: 32vw;
+  transform: rotate(-45deg);
+  animation: move1 2s infinite;
+}
+
+.arrow2 {
+  right: 32vw;
+  transform: rotate(45deg);
+  animation: move2 2s infinite;
+}
+
+@keyframes move1 {
+  0%, 100% {
+    transform: translateX(0) rotate(-45deg);
+  }
+  50% {
+    transform: translateX(0.5vw) rotate(-45deg);
+  }
+}
+
+@keyframes move2 {
+  0%, 100% {
+    transform: translateX(0) rotate(45deg);
+  }
+  50% {
+    transform: translateX(-0.5vw) rotate(45deg);
+  }
+}
+
+/* фоновое изображение */
+.aboutpic {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../img/aboutpic.png'); 
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}

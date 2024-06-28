@@ -1,0 +1,498 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* навигация */
+#sliderContainer,
+#buttons {
+  position: relative;
+}
+
+#sliderContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  width: 6vw;
+  height: 2.2vw;
+  border-radius: 2vw;
+  padding: 0.2vw;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+#sliderToggle {
+  position: absolute;
+  right: 0.4vw;
+  width: 1.6vw;
+  height: 1.6vw;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.5s ease, right 0.5s ease; 
+  cursor: pointer !important;
+}
+
+#sliderContainer.small-slider {
+  background-color: rgba(102, 102, 102, 0.4);
+  transform: scale(0.6) translateY(-0.5vw) translateX(-4vw); 
+}
+
+#sliderContainer.small-slider #sliderToggle {
+  right: calc(100% - 4vw); 
+  transform: translateX(-100%);
+}
+
+#buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 7.5vw;
+  transition: opacity 0.5s ease;
+}
+
+#buttons a {
+  margin-right: 1.2vw;
+  text-decoration: none;
+  color: black;
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.2vw;
+  text-wrap: nowrap;
+  background-color: rgba(102, 102, 102, 0.4);
+  padding: 0.5vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border-radius: 0.5vw;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, background-color 0.5s ease;
+}
+
+#buttons a:hover {
+  background-color: black;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#home {
+    background-color: rgba(102, 102, 102, 0.4);
+    width: 2.2vw;
+    height: 2.2vw;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2vw;
+    background-image: url('../img/home.svg');
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+  
+.home-icon {
+    width: 1.5vw;
+    height: 1.5vw;
+}
+  
+#home:hover {
+    background-color: black;
+    transition: 0.5s;
+    cursor: pointer;
+}
+  
+
+.header {
+  justify-content: space-between;
+  display: flex;
+  width: 95%;
+  margin: 1vw auto;
+}
+
+.arrow {
+  width: 0.8vw;
+  height: 0.8vw;
+  margin-left: 0.2vw;
+}
+  
+.header, #sliderContainer, #home {
+    position: relative;
+    z-index: 10000;
+}
+
+/* заголовки */
+h1 {
+    font-family: "IgraSans", sans-serif;
+    font-size: 3.5vw;
+    text-wrap: nowrap;
+    margin-top: 2vw;
+}
+
+h2 {
+    font-family: "IgraSans", sans-serif;
+    font-size: 3.5vw;
+    text-wrap: nowrap;
+    margin-top: 10vw;
+}
+
+/* постеры */
+.posters {
+    margin-left: 2.7vw;
+}
+
+.past, .future {
+    margin-top: 2vw;
+    display: flex;
+    gap: 3.5vw;
+    flex-wrap: wrap;
+}
+
+.poster1, .poster2, .poster3, .poster4, .poster5, .poster6, .poster7, .poster8,
+.poster9, .poster10, .poster11, .poster12, .poster13, .poster14, .poster15,
+.poster16 {
+    width: 20vw;
+    height: 30vw;
+    z-index: 1111;
+}
+
+.poster-img1, .poster-img2, .poster-img3, .poster-img4, .poster-img5,
+.poster-img6, .poster-img7, .poster-img8, .poster-img9, .poster-img10,
+.poster-img11, .poster-img12, .poster-img13, .poster-img14, .poster-img15,
+.poster-img16{
+    box-shadow: 0vw 3vw 3vw rgba(0, 0, 0, 0.2);
+    width: 21.5vw;
+    height: 30vw;
+}
+
+.poster-img5, .poster-img6, .poster-img7, .poster-img8, .poster-img13, .poster-img14,
+.poster-img15, .poster-img16{
+    margin-top: 2vw;
+}
+
+.poster-hidden1, .poster-hidden2, .poster-hidden3, .poster-hidden4,
+.poster-hidden5, .poster-hidden6, .poster-hidden7, .poster-hidden8,
+.poster-hidden9, .poster-hidden10, .poster-hidden11, .poster-hidden12,
+.poster-hidden13, .poster-hidden14, .poster-hidden15, .poster-hidden16{
+    font-family: "IgraSans", sans-serif;
+    font-size: 1vw;
+    position: absolute;
+    margin-top: -30.2vw;
+    line-height:1.5vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 21.5vw;
+    height: 30vw;
+    color: white;
+    opacity: 0;
+}
+
+.poster-hidden-one, .poster-hidden-two, .poster-hidden-three, .poster-hidden-four,
+.poster-hidden-five, .poster-hidden-six, .poster-hidden-seven, .poster-hidden-eight,
+.poster-hidden-nine, .poster-hidden-ten, .poster-hidden-eleven, .poster-hidden-twelve,
+.poster-hidden-thirteen, .poster-hidden-fourteen, .poster-hidden-fifteen, .poster-hidden-sixteen{
+    margin-top: 1vw;
+    margin-left: 0.5vw;
+}
+
+.name{
+    font-family: "IgraSans", sans-serif;
+    font-size: 1.5vw;
+    text-wrap: nowrap;
+    margin-top: -0.2vw;
+}
+
+.poster1:hover .poster-hidden1 {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.poster2:hover .poster-hidden2 {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.poster3:hover .poster-hidden3 {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.poster4:hover .poster-hidden4 {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.poster5:hover .poster-hidden5 {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.poster6:hover .poster-hidden6 {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.poster7:hover .poster-hidden7 {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.poster8:hover .poster-hidden8 {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.poster9:hover .poster-hidden9 {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.poster10:hover .poster-hidden10 {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.poster11:hover .poster-hidden11 {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.poster12:hover .poster-hidden12 {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.poster13:hover .poster-hidden13 {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.poster14:hover .poster-hidden14 {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.poster15:hover .poster-hidden15 {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.poster16:hover .poster-hidden16 {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+/* кнопка регистрации */
+.registrationButtonContainer{
+    margin-bottom: 20vw; 
+    z-index: -1000;
+}
+
+.registrationButton {
+    position: absolute;
+    margin-left: 2.7vw;
+    margin-top: 12vw;
+    background-color: #C2C2C2;
+    font-family: "IgraSans", sans-serif;
+    font-size: 1.2vw;
+    text-wrap: nowrap;
+    padding: 0.5vw;
+    border-radius: 0.5vw;
+    color: white;
+    transition: background-color 0.5s ease;
+    width: 91vw;
+    height: 2vw;
+    cursor: pointer;
+    z-index: 111;
+}
+  
+.registrationButton:hover {
+    background-color: black;
+}
+
+.arrow2 {
+    width: 2vw;
+    height: 1vw;
+    margin-top: 0.4vw;
+    margin-left: 66vw;
+}
+
+/* окно регистрации */
+#registrationModal {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#registrationModal.show {
+    opacity: 1; 
+    z-index: 1111;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .modalContent {
+    background-color: white;
+    margin: 15% auto;
+    padding: 3vw;
+    width: 30%;
+    border-radius: 0.5vw;
+    position: relative;
+  }
+  
+  .close {
+    color: #C2C2C2;
+    position: absolute;
+    margin-left: 31vw;
+    margin-top: -2.6vw;
+    font-size: 2vw;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  
+p {
+    font-family: "IgraSans", sans-serif;
+    margin-top: -2vw;
+    padding: 1vw;
+    margin-left: -1vw;
+    font-size: 1.5vw;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  select {
+    margin-bottom: 0.5vw;
+    padding: 0.8vw;
+    font-size: 1vw;
+    font-family: "IgraSans", sans-serif;
+    border: 0.1vw solid #C2C2C2;
+    border-radius: 0.5vw;
+  }
+  
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="email"]:focus,
+  select:focus {
+    border-color: #666;
+    outline: none;
+  }
+  
+ #submit  {
+    padding: 0.8vw;
+    font-size: 1.5vw;
+    color: white;
+    font-family: "IgraSans", sans-serif;
+    background-color: #C2C2C2;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    margin-top: 1.5vw;
+  }
+  
+  #submit:hover {
+    background-color: black;
+    transition: 0.7s;
+  }
+
+
+  .customSelect {
+    display: none;
+}
+
+.customSelectContainer {
+    position: relative;
+    width: 100%;
+}
+
+.selectSelected:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 1vw;
+    width: 1vw;
+    height: 1vw;
+    background: url('../img/down.svg') no-repeat center center;
+    background-size: contain;
+    transform: translateY(-50%);
+}
+
+.selectSelected {
+    background-color: white;
+    border: 0.1vw solid #C2C2C2;
+    border-radius: 0.5vw;
+    padding: 0.8vw;
+    font-size: 1vw;
+    font-family: "IgraSans", sans-serif;
+    color: #666;
+    cursor: pointer;
+}
+
+.select-items {
+    position: absolute;
+    background-color: white;
+    border: 0.1vw solid #C2C2C2;
+    border-top: none;
+    z-index: 99;
+    width: 100%;
+    max-height: 8vw; 
+    overflow-y: auto;
+    font-size: 1vw;
+    font-family: "IgraSans", sans-serif;
+    color: #666;
+}
+
+.select-items div {
+    padding: 0.8vw;
+    cursor: pointer;
+    border-bottom: 0.1vw solid #C2C2C2;
+}
+
+.select-items div:last-child {
+    border-bottom: none;
+}
+
+.select-items div:hover {
+    background-color: #f1f1f1;
+}
+
+.select-hide {
+    display: none;
+}
+
+.selected-item {
+    color: #000;
+}
+
+.selectSelected.no-arrow:after {
+    content: none;
+}
+
+/* благодарственное сообщение */
+.thank-you-message {
+    font-size: 1.5vw;
+    color: black;
+    font-family: "IgraSans", sans-serif;
+    margin-top: -0.5vw;
+}

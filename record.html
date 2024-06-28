@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>запись голоса</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/record.css">
+  <link rel="icon" type="image/svg+xml" href="../img/logo2.png">
+  <script src="./js/record.js"></script>
+</head>
+
+<body>
+    <!-- навигация -->
+    <div class="header">
+        <div id="slider-container">
+            <div id="slider-toggle">
+        </div>
+        <!-- навигационные кнопки -->
+        <div id="buttons">
+            <a href="./about.html" class="nav-button" id="about">ценности</a>
+            <a href="./space.html" class="nav-button" id="space">пространство</a>
+            <a href="./book.html" class="nav-button" id="book">книга</a>
+            <a href="./shop.html" class="nav-button" id="shop">магазин</a>
+            <a href="./events.html" class="nav-button" id="events">афиша</a>
+            <a href="./record.html" class="nav-button" id="record">запись голоса
+                <img class="arrow" src="./img/arrow.svg">
+            </a>
+        </div>
+        </div>
+        <!-- кнопка "домой" -->
+        <form action="./index.html">
+          <button class="home-icon" id="home"></button>
+        </form>
+      </div>
+<!-- страница записи голоса -->    
+<section class="pageRecord">
+    <h2>запиши голос</h2>
+    <!-- иконка микрофона -->   
+    <div class="microoo" id="startrecord">
+        <img class="micro-icon" src="./img/micro_icon.svg">
+    </div>
+    <!-- линейные волны -->  
+    <img class="wave1" src="./img/wave1left.svg">
+    <img class="wave2" src="./img/wave2left.svg">
+    <img class="wave3" src="./img/wave3left.svg">
+    <img class="wave1r" src="./img/wave1right.svg">
+    <img class="wave2r" src="./img/wave2right.svg">
+    <img class="wave3r" src="./img/wave3right.svg">
+    <!-- счетчик времени -->  
+    <span class="counter" id="counter">00:00:00</span>
+    <!-- кнопка "далее" -->
+    <div id="nextbutton2" class="nextbutton2">
+        <img class="next2" src="./img/next.svg">
+    </div>
+</section>
+<!-- страница прослушивания записи --> 
+<section class="pageListen">
+    <h3>прослушай свою запись</h3>
+    <!-- ползунок прослушивания записи --> 
+    <div class="audio-controls">
+        <audio id="audioPlayer"></audio>
+            <div class="progress-bar-container">
+                <progress class="progress-bar" id="progressBar"></progress>
+            </div>
+        <!-- кнопка "плей" -->
+        <button class="playa">
+            <img class="miniplay" src="./img/miniplay.svg">
+        </button>
+    </div>
+</section>
+</body>
+</html>

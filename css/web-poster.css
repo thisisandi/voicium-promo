@@ -1,0 +1,726 @@
+*{
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100%;
+}
+
+.webPoster {
+  width: 100vw;
+  background-color: white;
+}
+
+/* прямоугольник с бегущим текстом */
+.blackRectangle {
+  width: 100vw;
+  overflow: hidden;
+  background-color: black;
+}
+  
+h1 {
+  font-size: 5vw;
+  font-family: "Soundblaster 5";
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+  white-space: nowrap;
+  color: white;
+  animation: runText 15s linear infinite;
+}
+  
+@keyframes runText {
+  from {
+    transform: translateX(10%);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+  
+h1:hover {
+  animation-play-state: paused;
+}
+
+/* прямоугольник с линиями и кружками */
+.rectangleWithLinesAndDots {
+  width: 30vw;
+  height: 15vw;
+  display: flex;
+  background-color: #e9e9e9;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  transition: all 0.2s ease ;
+}
+  
+.dot {
+  width: 2vw;
+  height: 2vw; 
+  background-color: black; 
+  border-radius: 50%; 
+  margin-right: 0.2vw; 
+}
+  
+.rect {
+  width: 2vw;
+  height: 0.55vw; 
+  background-color: black; 
+  border-radius:  10px;
+  margin-top: 0.7vw;
+  margin-right: 0.2vw;
+}
+  
+.rectAndDot {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 8%;
+  margin-bottom: 0.4vw;
+  justify-content: center;
+}
+  
+#dot1, #dot2, #dot3, #dot4, #dot5, #dot6, #dot7, #dot8, #dot9, #dot10,
+#dot11, #dot12, #dot13, #dot14, #dot15, #dot16, #dot17, #dot18, #dot19, #dot20,
+#dot21, #dot22, #dot23, #dot24, #dot25, #dot26, #dot27, #dot28, #dot29, #dot30,
+#dot31, #rect1, #rect2, #rect3, #rect4, #rect5, #rect6, #rect7, #rect8, #rect9,
+#rect10, #rect11, #rect12, #rect13, #rect14, #rect15, #rect16, #rect17, #rect18,
+#rect19, #rect20, #rect21, #rect22, #rect23, #rect24 { 
+  animation: blinkAndMove 1s infinite alternate; 
+} 
+   
+@keyframes blinkAndMove { 
+  0%, 100% { 
+    transform: translateX(0) scale(1); 
+  } 
+  50% { 
+    transform: translateX(5px) scale(1.1); 
+  } 
+}
+  
+@keyframes move { 
+  0%, 100% { 
+    transform: translateX(0); 
+  } 
+  50% { 
+    transform: translateX(10px); 
+  } 
+}
+  
+#dot1:hover, #dot2:hover, #dot3:hover, #dot4:hover, #dot5:hover, #dot6:hover, #dot7:hover, #dot8:hover, #dot9:hover, #dot10:hover,
+#dot11:hover, #dot12:hover, #dot13:hover, #dot14:hover, #dot15:hover, #dot16:hover, #dot17:hover, #dot18:hover, #dot19:hover, #dot20:hover,
+#dot21:hover, #dot22:hover, #dot23:hover, #dot24:hover, #dot25:hover, #dot26:hover, #dot27:hover, #dot28:hover, #dot29:hover, #dot30:hover,
+#dot31:hover, #rect1:hover, #rect2:hover, #rect3:hover, #rect4:hover, #rect5:hover, #rect6:hover, #rect7:hover, #rect8:hover, #rect9:hover,
+#rect10:hover, #rect11:hover, #rect12:hover, #rect13:hover, #rect14:hover, #rect15:hover, #rect16:hover, #rect17:hover, #rect18:hover,
+#rect19:hover, #rect20:hover, #rect21:hover, #rect22:hover, #rect23:hover, #rect24:hover {
+  opacity: 0.5;
+}
+
+/* квадрат с кружками */
+.squareWithDots {
+  width: 15vw;
+  height: 15vw;
+  padding: 4px 4px;
+  display: flex;
+  background-color: black;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+  
+.dot2 {
+  width: 2vw;
+  height: 2vw;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 0.2vw;
+}
+  
+#dot67, #dot32, #dot33, #dot34, #dot35, #dot36, #dot37, #dot38, #dot39, #dot40,
+#dot41, #dot42, #dot43, #dot44, #dot45, #dot46, #dot47, #dot48, #dot49, #dot50,
+#dot51, #dot52, #dot53, #dot54, #dot55, #dot56, #dot57, #dot58, #dot59, #dot60,
+#dot61, #dot62, #dot63, #dot64, #dot65, #dot66 {
+  animation: pulseAnimation 1s infinite alternate;
+}
+  
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+  
+#dot67 { animation-delay: 1s; }
+#dot32 { animation-delay: 2s; }
+#dot33 { animation-delay: 3s; }
+#dot34 { animation-delay: 4s; }
+#dot35 { animation-delay: 5s; }
+#dot36 { animation-delay: 6s; }
+#dot37 { animation-delay: 7s; }
+#dot38 { animation-delay: 8s; }
+#dot39 { animation-delay: 9s; }
+#dot40 { animation-delay: 10s; }
+#dot41 { animation-delay: 11s; }
+#dot42 { animation-delay: 12s; }
+#dot43 { animation-delay: 13s; }
+#dot44 { animation-delay: 14s; }
+#dot45 { animation-delay: 15s; }
+#dot46 { animation-delay: 16s; }
+#dot47 { animation-delay: 17s; }
+#dot48 { animation-delay: 18s; }
+#dot49 { animation-delay: 19s; }
+#dot50 { animation-delay: 20s; }
+#dot51 { animation-delay: 21s; }
+#dot52 { animation-delay: 22s; }
+#dot53 { animation-delay: 23s; }
+#dot54 { animation-delay: 24s; }
+#dot55 { animation-delay: 25s; }
+#dot56 { animation-delay: 26s; }
+#dot57 { animation-delay: 27s; }
+#dot58 { animation-delay: 28s; }
+#dot59 { animation-delay: 29s; }
+#dot60 { animation-delay: 30s; }
+#dot61 { animation-delay: 31s; }
+#dot62 { animation-delay: 32s; }
+#dot63 { animation-delay: 33s; }
+#dot64 { animation-delay: 34s; }
+#dot65 { animation-delay: 35s; }
+#dot66 { animation-delay: 36s; }
+
+/* прямоугольник с линиями */
+.rectangleWithLines { 
+  width: 70vw; 
+  height: 13vw; 
+  background-color: black; 
+  display: flex; 
+  padding: 1vw 0.5vw;
+  flex-direction: column; 
+  justify-content: space-between; 
+  align-items: center; 
+  overflow: hidden; 
+}
+  
+.longrect { 
+  height: 0.8vw; 
+  background-color: white;  
+  border-radius: 10px; 
+  margin-top: 0.7vw; 
+  margin-right: 2vw; 
+}
+  
+.lines { 
+  display: flex; 
+  width: 100%; 
+  justify-content: center; 
+  overflow: hidden; 
+  animation: moveRect 2s infinite paused;
+}
+  
+@keyframes moveRect {
+  0% {
+    transform: translateX(0%);
+  }
+  25% {
+      transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%); 
+  }
+}
+  
+.rectangleWithLines:hover .lines { 
+  animation-play-state: running; 
+}
+  
+#rect38 {
+  width: 35vw;
+}
+  
+#rect37 {
+  width: 12vw;
+}
+  
+#rect28,
+#rect25 {
+  width: 20vw;
+}
+  
+#rect29,
+#rect27 {
+  width: 10vw;
+}
+  
+#rect30 {
+  width: 4vw;
+}
+  
+#rect31 {
+  width: 25vw;
+}
+  
+#rect32 {
+  width: 15vw
+}
+  
+#rect34 {
+  width: 20vw;
+}
+  
+#rect35 {
+  width: 5vw;
+}
+  
+#rect36 {
+  width: 30vw;
+}
+
+/* квадрат с большим кружком */
+.squareWithBigDot {
+  width: 50%;
+  height: 15vw;
+  background-color: #e9e9e9;
+}
+  
+.big-dot {
+  width: 8vw;
+  height: 8vw;
+  background-color: black;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  margin: auto;
+  margin-top: 25%;
+}
+  
+.big-dot:hover {
+  transform: scale(1.2);
+  background-color: #B61427;
+}
+
+/* прямоугольник с треугольниками-стрелочками */
+.rectangleWithTriangles {
+  width: 100vw;
+  height: 15vw;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+  
+.leftTri, .rightTri {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 1.5vw;
+  margin: 1.5vw;
+}
+  
+.tri {
+  height: 0.5vw;
+  width: 5vw;
+  background-color: white;
+  border-radius: 10px;
+  margin: 1vw;
+}
+  
+#tri1, #tri2, #tri3 {
+  transform: rotate(42deg);
+  animation: UpDown 1s infinite alternate;
+}
+  
+@keyframes UpDown {
+  0% {
+    transform: translateY(0) rotate(42deg);
+  }
+  100% {
+    transform: translateY(2vw) rotate(42deg);
+  }
+}
+  
+#tri4, #tri5, #tri6 {
+  transform: rotate(-42deg);
+  animation: UpDown2 1s infinite alternate;
+}
+  
+@keyframes UpDown2 {
+  0% {
+    transform: translateY(0) rotate(-42deg);
+  }
+  100% {
+    transform: translateY(2vw) rotate(-42deg);
+  }
+}
+  
+#tri7, #tri8, #tri9 {
+  transform: rotate(-137deg);
+  margin-right: -5.5vw;
+  animation: UpDown3 1s infinite alternate;
+}
+  
+@keyframes UpDown3 {
+  0% {
+    transform: translateY(0) rotate(-137deg);
+  }
+  100% {
+    transform: translateY(2vw) rotate(-137deg);
+  }
+}
+  
+#tri10, #tri11, #tri12 {
+  transform: rotate(-42deg);
+  animation: UpDown2 1s infinite alternate;
+}
+  
+#tri13, #tri14, #tri15 {
+  transform: rotate(-42deg);
+  animation: UpDown4 1s infinite alternate;
+}
+  
+@keyframes UpDown4 {
+  0% {
+    transform: translateY(0) rotate(-42deg);
+  }
+  100% {
+    transform: translateY(-2vw) rotate(-42deg);
+  }
+}
+  
+#tri16, #tri17, #tri18 {
+  transform: rotate(42deg);
+  animation: UpDown5 1s infinite alternate;
+}
+  
+@keyframes UpDown5 {
+  0% {
+    transform: translateY(0) rotate(42deg);
+  }
+  100% {
+    transform: translateY(-2vw) rotate(42deg);
+  }
+}
+
+#tri19, #tri20, #tri21 {
+  transform: rotate(-42deg);
+  margin-right: -5.9vw;
+  animation: UpDown6 1s infinite alternate;
+}
+  
+@keyframes UpDown6 {
+  0% {
+    transform: translateY(0) rotate(-42deg);
+  }
+  100% {
+    transform: translateY(-2vw) rotate(-42deg);
+  }
+}
+  
+#tri22, #tri23, #tri24 {
+  transform: rotate(42deg);
+  animation: UpDown5 1s infinite alternate;
+}
+  
+#tri25, #tri26, #tri27 {
+  transform: rotate(-137deg);
+  animation: UpDown3 1s infinite alternate;
+}
+  
+#tri28, #tri29, #tri30 {
+  transform: rotate(-42deg);
+  animation: UpDown2 1s infinite alternate;
+}
+  
+#tri31, #tri32, #tri33 {
+  transform: rotate(42deg);
+  margin-right: -5.6vw;
+  animation: UpDown 1s infinite alternate;
+}
+  
+#tri34, #tri35, #tri36 {
+  transform: rotate(-42deg);
+  animation: UpDown2 1s infinite alternate;
+}
+
+.flexAll {
+  display: flex;
+  width: 30vw;
+  height: 30vw;
+  flex-wrap: wrap;
+}
+  
+.dotsAndDot {
+  display: flex;
+  width: 30vw;
+  height: 15vw;
+}
+ 
+.flexest {
+  display: flex;
+  height: 30vw;
+}
+
+/* блок с началом слогана */
+.textH2 {
+  margin-left: 1vw;
+  overflow: hidden;
+  height: 15vw;
+}
+  
+.textH2 h2 {
+  font-size: 10vw;
+  background-color: white;
+  font-family: "IgraSans";
+  font-weight: bold;
+  font-style: normal;
+  line-height: 0.8;
+  color: black;
+  text-align: left;
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+  height: 15vw;
+  width: 70vw;
+}
+  
+.textH2:hover h2 {
+  transform: translateY(-60%);
+}
+
+.linesAndText {
+  overflow: hidden;
+  height: 30vw;
+}
+  
+@keyframes scaleAnimation {
+  0% {
+    transform: scaleY(1) rotate(180deg);
+  }
+  50% {
+    transform: scaleY(0.3) rotate(180deg);
+  }
+  100% {
+    transform: scaleY(1) rotate(180deg);
+  }
+}
+
+/* пярмоугольник с буквой V */
+.letterV {
+  width: 40vw;
+  height: 40vw;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  text-align: right;
+}
+  
+.V {
+  margin-left: -5vw;
+  font-size: 28vw;
+  font-family: "Soundblaster 5";
+  color: white;
+  animation: scaleAnimation 2s infinite;
+  transition: color 1s ease;
+  background-color: black;
+}
+  
+.V:hover {
+  color:#B61427
+}
+
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  height: 80vw;
+  overflow: hidden;
+}
+  
+.upperFlexContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+/* блок с человечками и аудиодорожкой */
+.transform {
+  background-color: #e9e9e9;
+  width: 60vw;
+  height: 80vw;
+  overflow: hidden;
+}
+  
+.underTransform {
+  height: 50vw;
+  overflow: hidden;
+}
+  
+.background {
+  width:60vw;
+}
+  
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  
+.person {
+  width: 45vw;
+  margin-top: -50vw;
+  animation: BounceAnimation 1s infinite;
+}
+    
+@keyframes BounceAnimation {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(-4vw);
+  }
+  60% {
+    transform: translateX(-2vw);
+  }
+}
+  
+.spot1 {
+  width: 45vw;
+  margin-top: -5vw;
+  animation: moveAnimation 2s infinite;
+  transition: transform 1s ease;
+}
+  
+.spot1:hover {
+  transform: scale(1.2);
+  transition: transform 2s ease;
+}
+  
+.spot2 {
+  width: 45vw;
+  margin-top: -12vw;
+  animation: moveanimation2 2s infinite;
+  transition: transform 1s ease;
+}
+  
+.spot2:hover {
+  transform: scale(1.2);
+  transition: transform 2s ease;
+}
+ 
+.soundWave {
+  width: 55vw;
+}
+  
+@keyframes moveAnimation {
+  0% {
+    transform: translateY(-20vw)
+  }
+}
+  
+@keyframes moveanimation2 {
+  0% {
+    transform: translateY(-10vw)
+  }
+}
+  
+.soundWave {
+  transition: opacity 0.5s ease;
+  transition: transform 0.5s ease;
+}
+  
+.soundWave:hover {
+  opacity: 0.6;
+  transform: scale(1.05);
+}
+
+/* блок с описанием проекта */
+.textSmth{
+  overflow: hidden;
+  background-color: #e9e9e9;
+  height: 40vw;
+}
+  
+.redLines {
+  width: 40vw;
+  transition: opacity 0.5s ease;
+  animation: pulse 2s infinite;
+  margin-top: -40vw;
+}
+  
+h4 {
+  font-size: 2.4vw;
+  font-family: "IgraSans";
+  font-weight: bold;
+  font-style: normal;
+  line-height: 1;
+  color: black;
+  text-align: left;
+  padding: 1vw;
+}
+  
+.redLines:hover {
+  opacity: 0.3;
+}
+  
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5) rotate(100deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* бегущий текст-продолжение слогана */
+.runningtext {
+  width: 100vw;
+  overflow: hidden;
+  background-color: black;
+}
+  
+h5 {
+  font-size: 10vw;
+  font-family: "IgraSans";
+  font-weight: bold;
+  font-style: normal;
+  white-space: nowrap;
+  color: white;
+  animation: runText 10s linear infinite;
+  margin-top: 1.5vw;
+}
+  
+h5:hover {
+  animation-play-state: paused;
+}
+
+/* футер */
+.footer {
+  background-color: #e9e9e9;
+  width: 100vw;
+  height: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+  
+h6 {
+  font-size: 3vw;
+  font-family: "IgraSans";
+  font-weight: bold;
+  font-style: normal;
+  color: black;
+  padding-top: 2vw;
+  padding-left: 2vw;
+}
+  
+.logohse {
+  width: 20vw;
+  height: 20vw;
+  margin-right: 5vw;
+  margin-top: 1vw;
+}

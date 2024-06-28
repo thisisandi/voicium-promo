@@ -1,0 +1,263 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* навигация */
+  #sliderContainer,
+  #buttons {
+    position: relative;
+  }
+  
+  #sliderContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    width: 6vw;
+    height: 2.2vw;
+    border-radius: 2vw;
+    padding: 0.2vw;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+  
+  #sliderToggle {
+    position: absolute;
+    right: 0.4vw;
+    width: 1.6vw;
+    height: 1.6vw;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.5s ease, right 0.5s ease; 
+    cursor: pointer !important;
+  }
+  
+  #sliderContainer.small-slider {
+    background-color: rgba(102, 102, 102, 0.4);
+    transform: scale(0.6) translateY(-0.5vw) translateX(-4vw); 
+  }
+  
+  #sliderContainer.small-slider #sliderToggle {
+    right: calc(100% - 4vw); 
+    transform: translateX(-100%);
+  }
+  
+  #buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 7.5vw;
+    transition: opacity 0.5s ease;
+  }
+  
+  #buttons a {
+    margin-right: 1.2vw;
+    text-decoration: none;
+    color: black;
+    font-family: "IgraSans", sans-serif;
+    font-size: 1.2vw;
+    text-wrap: nowrap;
+    background-color: rgba(102, 102, 102, 0.4);
+    padding: 0.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-radius: 0.5vw;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, background-color 0.5s ease;
+  }
+  
+  #buttons a:hover {
+    background-color: black;
+  }
+  
+  .hidden {
+    opacity: 0;
+  }
+  
+  #home {
+    background-color: rgba(102, 102, 102, 0.4);
+    width: 2.2vw;
+    height: 2.2vw;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2vw;
+    background-image: url('../img/home.svg');
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+  
+.home-icon {
+    width: 1.5vw;
+    height: 1.5vw;
+}
+  
+#home:hover {
+    background-color: black;
+    transition: 0.5s;
+    cursor: pointer;
+}
+  
+.header {
+  justify-content: space-between;
+  display: flex;
+  width: 95%;
+  margin: 1vw auto;
+}
+  
+.arrow {
+  width: 0.8vw;
+  height: 0.8vw;
+  margin-left: 0.2vw;
+}
+    
+.header, #sliderContainer, #home {
+  position: relative;
+  z-index: 10000;
+}
+
+/* кнопка "назад" */
+button.back {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 5vw;
+  height: 5vw;
+  margin-left: 2.7vw;
+  margin-top: 1vw;
+  position: absolute;
+  z-index: 10001;
+  background-color: transparent;
+}
+
+.back-icon {
+  width: 2.5vw;
+  height: 2.5vw;
+}
+
+/* контент для оформления заказа */
+h1 {
+  font-family: "IgraSans", sans-serif;
+  font-size: 2.5vw;
+  margin-left: 10.1vw;
+  margin-top: 3.4vw;
+}
+
+h2 {
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.5vw;
+  margin-left: 10.1vw;
+  margin-top: 2.5vw;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+  margin-bottom: 0.5vw;
+  padding: 0.8vw;
+  font-size: 1vw;
+  font-family: "IgraSans", sans-serif;
+  border: 0.1vw solid #C2C2C2;
+  border-radius: 0.5vw;
+  display: flex;
+  margin-left: 10vw;
+  margin-top: 1vw;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+input[type="comment"]:focus {
+  border-color: #666;
+  outline: none;
+}
+
+input[type="comment"]{
+  padding: 0.8vw;
+  font-size: 1vw;
+  font-family: "IgraSans", sans-serif;
+  border: 0.1vw solid #C2C2C2;
+  border-radius: 0.5vw;
+  width: 30vw;
+  display: flex;
+  margin-left: 10vw;
+  margin-top: 1vw;
+  z-index: 10003;
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1vw; 
+}
+
+.round-radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.5vw;
+  height: 1.5vw;
+  border-radius: 50%;
+  border: 0.1vw solid #C2C2C2;
+  outline: none;
+  cursor: pointer;
+  margin-right: 0.5vw;
+  margin-left: 10vw;
+  z-index: 999;
+}
+
+.round-radio:checked {
+  background-color: black;
+  border: 0.1vw solid black;
+}
+
+label {
+  font-family: "IgraSans", sans-serif;
+  font-size: 1vw;
+  cursor: pointer;
+  margin-top: 0.5vw;
+}
+
+.cart-left { 
+  margin-top: -17vw;
+  z-index: -2;
+}
+
+.cartItem {
+    width: 25vw;
+    height: 5vw;
+    display: flex;
+    justify-content: space-between;
+    border: 0.1vw solid #C2C2C2;
+    font-family: "IgraSans", sans-serif;;
+    border-radius: 0.5vw;
+    align-items: center;
+    font-size: 1vw;
+    margin-top: 1vw;
+    margin-left: 70vw;
+    padding: 0.5vw;
+    z-index: -1;
+}
+
+h3 {
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.5vw;
+  margin-left: 70vw;
+  margin-top: 0.7vw;
+}
+
+.total {
+  font-family: "IgraSans", sans-serif;
+  font-size: 1.5vw;
+  margin-left: 91vw;
+  margin-top: 1vw;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>ценности</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/about.css">
+  <link rel="icon" type="image/svg+xml" href="./img/logo2.png">
+  <script src="./js/about.js"></script>
+</head>
+
+<body>
+    <!-- навигация -->
+    <div class="header">
+        <div id="sliderContainer">
+          <div id="sliderToggle"></div>
+          <!-- навигационные кнопки -->
+          <div id="buttons">
+            <a href="./about.html" class="nav-button" id="about">ценности</a>
+            <a href="./space.html" class="nav-button" id="space">пространство</a>
+            <a href="./book.html" class="nav-button" id="book">книга</a>
+            <a href="./shop.html" class="nav-button" id="shop">магазин</a>
+            <a href="./events.html" class="nav-button" id="events">афиша</a>
+            <a href="./record.html" class="nav-button" id="record">запись голоса
+                <img class="arrow" src="./img/arrow.svg">
+            </a>
+          </div>
+        </div>
+        <!-- кнопка "домой" -->
+        <form action="./index.html">
+           <button class="home-icon" id="home"></button>
+        </form>
+      </div>
+    <!-- текст -->
+    <p class="firstParagraph">Voicium — это уникальное пространство, позволяющее человеку сохранить свой опыт
+    <br>с помощью собственного голоса.</p>
+    <p class="blurred">Наша основная задача — создание <br>и хранение голосовых записей с целью 
+    <br>создания коллективной памяти.</p>
+    <p class="blurred">Мы открыты для всех желающих выразить <br>свои мысли и передать их в будущее.</p>
+    <p class="blurred">Наш манифест</p>
+    <p class="blurred">Забвение</p>
+    <p class="blurred">1.1 Забвение — враг, навсегда лишающий <br>людей ценных воспоминаний.</p>
+    <p class="blurred">1.2 Безвозвратная потеря ценных воспоминаний делает людей беспомощными перед бегством времени. Оно затрагивает 
+    не только частные воспоминания, но и воспоминания, относящиеся <br>к коллективной памяти.</p>
+    <p class="blurred">1.3 Забвение отнимает у людей возможность познать ценность прошлого, оставляя 
+    <br>с искаженными отрывками воспоминаний, <br>зачастую, без контекста.</p>
+    <p class="blurred">Голос</p>
+    <p class="blurred">2.1 Голос человека служит не только средством общения, 
+    но и способом выражения личности.</p>
+    <p class="blurred">2.2 Голос передает моменты, эмоции, мысли 
+    <br>и иные части человеческого опыта.</p>
+    <p class="blurred">Voicium</p>
+    <p class="blurred">3.1 Voicium трансформирует голос человека <br>
+    в часть истории, перенося его опыт <br>в форму аудиозаписи.</p>
+    <p class="blurredend">3.2 Voicium предоставляет все необходимые<br>условия для сохранения опыта человека 
+    и его дальнейшей передачи, формируя мост между настоящим, прошлым и будущим.</p>
+    <p class="blurredend">3.3 Voicium создает сообщество, способное передать богатство опыта с помощью голоса.</p>
+    <!-- переход на веб-плакат из 2-го модуля -->
+    <div class="container">
+        <div class="arrows">
+            <img class="arrow1" src="./img/yellowarrowright.svg">
+            <img class="arrow2" src="./img/yellowarrow.svg">
+        </div>
+        <p class="blurredend" id="more" onclick="redirectToPage()">Узнать больше</p>
+    </div>
+    <div class="aboutpic"></div>
+    <script>
+        function redirectToPage() {
+        window.location.href = "./web-poster.html";
+        }
+    </script>
+</body>
+</html>
