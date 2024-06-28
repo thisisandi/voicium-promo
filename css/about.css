@@ -94,6 +94,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0.2vw;
+  z-index: 1111111;
 }
 
 .home-icon {
