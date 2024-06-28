@@ -80,11 +80,11 @@ body {
 }
   
 #home {
-  background-color: rgba(102, 102, 102, 0.4);
+  background-color: black;
   width: 2.2vw;
   height: 2.2vw;
   border-radius: 50%;
-  border: none;
+  border: 0.1vw solid white;
   display: flex;
   align-items: center;
   justify-content: center;
